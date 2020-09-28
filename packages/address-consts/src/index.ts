@@ -69,6 +69,9 @@ export interface Country {
     postalCode: string;
     zone: string;
   };
+  optionalLabels: {
+    address2: string;
+  };
   formatting: {
     edit: string;
     show: string;
@@ -101,16 +104,3 @@ export const HEADERS = {
   'Content-Type': 'application/json',
   'Access-Control-Allow-Origin': '*',
 };
-
-export const SUPPORTED_LOCALES = [
-  'DA',
-  'DE',
-  'EN',
-  'ES',
-  'FR',
-  'IT',
-  'JA',
-  'NL',
-  'PT',
-  'PT_BR',
-];

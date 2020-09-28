@@ -9,6 +9,8 @@ import {
   isTomorrow,
   isYesterday,
   TimeUnit,
+  isLessThanOneWeekAway,
+  isLessThanOneYearAway,
 } from '@shopify/dates';
 import {memoize} from '@shopify/decorators';
 import {languageFromLocale, regionFromLocale} from '@shopify/i18n';
@@ -544,11 +546,34 @@ export class I18n {
     }).toLocaleLowerCase();
 
     if (isToday(date)) {
-      return time;
+      return this.translate('date.humanize.today', {time});
     }
 
     if (isTomorrow(date)) {
       return this.translate('date.humanize.tomorrow', {time});
+    }
+
+    if (isLessThanOneWeekAway(date)) {
+      const weekday = this.formatDate(date, {
+        ...options,
+        weekday: 'long',
+      });
+      return this.translate('date.humanize.lessThanOneWeekAway', {
+        weekday,
+        time,
+      });
+    }
+
+    if (isLessThanOneYearAway(date)) {
+      const monthDay = this.formatDate(date, {
+        ...options,
+        month: 'short',
+        day: 'numeric',
+      });
+      return this.translate('date.humanize.lessThanOneYearAway', {
+        date: monthDay,
+        time,
+      });
     }
 
     return this.formatDate(date, {

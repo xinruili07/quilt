@@ -5,6 +5,26 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+<!-- ## [Unreleased] -->
+
+## [3.1.68] - 2020-08-26
+
+- Wrap `encodeURI` values in double quotes [1613](https://github.com/Shopify/quilt/pull/1613)
+
+## [3.1.67] - 2020-08-26
+
+- URI encode `config` on redirection page [1612](https://github.com/Shopify/quilt/pull/1612)
+
+## [3.1.65] - 2020-07-06
+
+- Include `prefix` when redirect to the root endpoint [1498](https://github.com/Shopify/quilt/pull/1498)
+
+## [3.1.63] - 2020-05-25
+
+### Fixed
+
+- Protect against reflected XSS vulnerability [1455](https://github.com/Shopify/quilt/pull/1455)
+
 ## [3.1.62] - 2015-05-20
 
 ### Fixed
