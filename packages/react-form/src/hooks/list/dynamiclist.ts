@@ -30,7 +30,13 @@ export function useDynamicList<Item extends object>(
   const {fields, dispatch} = useBaseList(listOrConfig, validationDependencies);
 
   function addItem(factoryPayload?: any) {
-    dispatch(addFieldItemAction([...fieldFactory(factoryPayload)]));
+    const itemToAdd = fieldFactory(factoryPayload);
+
+    if (Array.isArray(itemToAdd)) {
+      dispatch(addFieldItemAction(itemToAdd));
+    } else {
+      dispatch(addFieldItemAction([itemToAdd]));
+    }
   }
 
   function removeItem(index: number) {
