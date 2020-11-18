@@ -5,12 +5,12 @@ import {useBaseList, FieldListConfig} from './baselist';
 
 interface DynamicList<Item extends object> {
   fields: FieldDictionary<Item>[];
-  addItem(factoryPayload?: any): void;
+  addItem(factoryArgument?: any): void;
   removeItem(index: number): void;
 }
 
 type FactoryFunction<Item extends object> = (
-  factoryPayload?: any,
+  factoryArgument?: any,
 ) => Item | Item[];
 
 /*
@@ -29,8 +29,8 @@ export function useDynamicList<Item extends object>(
 ): DynamicList<Item> {
   const {fields, dispatch} = useBaseList(listOrConfig, validationDependencies);
 
-  function addItem(factoryPayload?: any) {
-    const itemToAdd = fieldFactory(factoryPayload);
+  function addItem(factoryArgument?: any) {
+    const itemToAdd = fieldFactory(factoryArgument);
 
     if (Array.isArray(itemToAdd)) {
       dispatch(addFieldItemAction(itemToAdd));

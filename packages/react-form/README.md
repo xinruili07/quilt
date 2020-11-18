@@ -713,13 +713,13 @@ We can also utilize the `removeItem`, and `addItem` functions. In this example, 
 Note that addItem can also take in an argument which can then be passed onto the factory. In this case, the factory can be
 
 ```tsx
-const emptyCardFactory = (factoryPayload: any): Card => ([{
+const emptyCardFactory = (factoryArgument: any): Card => ([{
   cardNumber: '',
   cvv: '',
 });
 ```
 
-You can then use this payload to do as you wish :).
+You can then use this argument to do as you wish :).
 
 #### Does this work with useForm?
 

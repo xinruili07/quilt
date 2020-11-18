@@ -113,8 +113,8 @@ describe('useDynamicList', () => {
   });
 
   describe('add mulitple items with payload', () => {
-    const factory = (payload: any) => {
-      const {price, optionName, optionValue} = payload;
+    const factory = (argument: any) => {
+      const {price, optionName, optionValue} = argument;
       return [
         {price, optionName, optionValue},
         {price: '', optionName: '', optionValue: ''},
