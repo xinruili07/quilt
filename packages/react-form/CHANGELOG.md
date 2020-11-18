@@ -7,6 +7,7 @@ and adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
 
+- Added new functionality to `useDynamicList`. Added the ability to dynamically add more than one list item and the ability to pass in a payload into the dynamic list factory.
 - Added `useDynamicList` functionality. `useDynamicList` adds the ability to dynamically add and remove list items.
 
 ## [0.8.1] - 2020-10-20
