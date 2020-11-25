@@ -139,6 +139,28 @@ describe('asyncBabelPlugin()', () => {
     );
   });
 
+  it.only('works with alpaql', async () => {
+    const code = await normalize(`
+        import {createAsyncQuery} from '@shopify/alpaql/async';
+
+        const BuildQuery = createAsyncQuery({
+          load: () => /* webpackChunkName: 'BuildQuery' */ import('./graphql/BuildQuery.graphql'),
+        });
+    `);
+
+    expect(await transform(code)).toBe(
+      await normalize(`
+      import {createAsyncQuery} from '@shopify/alpaql/async';
+
+
+      const BuildQuery = createAsyncQuery({
+        load: () => /* webpackChunkName: 'BuildQuery' */ import('./graphql/BuildQuery.graphql'),
+        id: () => require.resolveWeak('./graphql/BuildQuery.graphql'),
+      });
+    `),
+    );
+  });
+
   it('adds an id prop when load is a method', async () => {
     const code = await normalize(`
       import {${defaultImport}} from '${defaultPackage}';
