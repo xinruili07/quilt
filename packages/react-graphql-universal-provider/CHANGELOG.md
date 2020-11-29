@@ -7,6 +7,10 @@ and adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
 <!-- ## [Unreleased] -->
 
+## [3.3.5] - 2020-11-28
+
+- Updated `@shopify/react-graphql` dependency to `^6.1.19`.
+
 ## [3.3.3] - 2020-10-20
 
 - Added `tslib@^1.14.1` in the list of dependencies. [#1657](https://github.com/Shopify/quilt/pull/1657)

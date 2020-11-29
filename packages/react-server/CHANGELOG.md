@@ -5,6 +5,10 @@ All notable changes to this project will be documented in this file.
 The format is based on [Keep a Changelog](http://keepachangelog.com/en/1.0.0/)
 and adheres to [Semantic Versioning](http://semver.org/spec/v2.0.0.html).
 
+## [0.20.1] - 2020-11-28
+
+- Updated `@shopify/react-async` dependency to `^3.1.25`.
+
 ## [Unreleased]
 
 - Assign `ctx.state.quiltError` to exception caught after server error. ([#1667](https://github.com/Shopify/quilt/pull/1667))
